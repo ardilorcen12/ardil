@@ -3,12 +3,16 @@
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
+
+/*expand container as needed*/
+
 .container{
     width: 100%;
     height: 100%;
+    overflow-x: scroll;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(images/dbb.jpg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     padding-left: 8%;
     padding-right: 8%;
     box-sizing: border-box;
@@ -16,7 +20,18 @@
 .navbar{
     height: 12%;
     display: flex;
+    flex-direction: row;    
     align-items: center;
+    justify-content: center;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    list-style: none;
 }
 .logo{
     width: 100px;
@@ -34,16 +49,46 @@ nav{
 nav ul li{
     list-style: none;
     display: inline-block;
-    margin-left: 60px;
     
 }
 nav ul li a{
     text-decoration: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 1rem;
 }
+
+/* for mobile devices */
+@media (min-width: 1200px) {
+    .row{
+    display: flex;
+    flex-direction: row !important;
+    height: 88%;
+    align-items: center;
+}
+}
+
+/*use flex for boxes on mobile*/
+@media (max-width: 1200px) {
+    .boxes {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px !important;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.boxes {
+    display: grid;
+    gap: 20px !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
 .row{
     display: flex;
+    flex-direction: column;
     height: 88%;
     align-items: center;
 }
@@ -72,15 +117,26 @@ button{
     outline: none;
     margin-top: 30px;
 }
+
+a:link {
+    text-decoration: none;
+}
+
 .card{
     width: 200px;
+    overflow-wrap: break-word;
+    color: white;
+    text-shadow: #000 0 0 20px;
+    text-decoration: none !important;
     height: 230px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 800;
     border-radius: 10px;
     padding: 15px 25px;
     box-sizing: border-box;
     cursor: pointer;
-    margin: 10px 20px;
     background-image: url(images/picture1.jpg.jpg);
     background-position: center;
     background-size: cover;
@@ -88,20 +144,13 @@ button{
 }
 .card1{
     background-image: url(images/zaza%20tarihi.jpg);
-    margin-left: 160px;
 }
 
 .card2{
     background-image: url(images/indir.jpg);
-    margin-left: 20px;
 }
 .card3{
     background-image: url(images/population1.jpg);
-    margin-left: 160px;
-}
-.card4{
-    margin-left: 20px;
-    background-image: url(images/picture1.jpg.jpg);
 }
 .card:hover{
     transform: translateY(-10px);
