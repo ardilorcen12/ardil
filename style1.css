@@ -67,6 +67,11 @@ nav ul li a{
 }
 }
 
+.main {
+    display: flex;
+    gap: 4rem;
+}
+
 /*use flex for boxes on mobile*/
 @media (max-width: 1200px) {
     .boxes {
@@ -76,6 +81,15 @@ nav ul li a{
         gap: 20px !important;
         align-items: center;
         justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .toppart {
+        scale: 0.8;
+    }
+    .boxes {
+        margin-bottom: 2rem;
     }
 }
 
@@ -89,7 +103,6 @@ nav ul li a{
 .row{
     display: flex;
     flex-direction: column;
-    height: 88%;
     align-items: center;
 }
 .col{
